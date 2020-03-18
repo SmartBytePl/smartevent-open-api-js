@@ -1,6 +1,6 @@
 # SmartEventOpenApi.OrdersApi
 
-All URIs are relative to *https://test-se2.smartevent.pl/open-api*
+All URIs are relative to *http://test-se2.smartevent.pl/open-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

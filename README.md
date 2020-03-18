@@ -37,7 +37,7 @@ api.eventsGet(callback);
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://test-se2.smartevent.pl/open-api*
+All URIs are relative to *http://test-se2.smartevent.pl/open-api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
