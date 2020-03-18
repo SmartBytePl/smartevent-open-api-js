@@ -1,6 +1,6 @@
 # Smart Event Open API
 
-SmartEventOpenApi - JavaScript client for smart_event_open_api
+SmartEventOpenApi - JavaScript client
 Smart Event Open API documentation
 
 - API version: 2.0.8
@@ -41,16 +41,16 @@ All URIs are relative to *https://test-se2.smartevent.pl/open-api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SmartEventOpenApi.CategoriesApi* | [**categoriesCodeGet**](docs/CategoriesApi.md#categoriesCodeGet) | **GET** /categories/{code} | Get category details
 *SmartEventOpenApi.CategoriesApi* | [**categoriesGet**](docs/CategoriesApi.md#categoriesGet) | **GET** /categories | Get list of all categories
-*SmartEventOpenApi.EventsApi* | [**categoryEventsByCodeCodeGet**](docs/EventsApi.md#categoryEventsByCodeCodeGet) | **GET** /category-events/by-code/{code} | Get events data for specied category code
-*SmartEventOpenApi.EventsApi* | [**eventsByCodeCodeGet**](docs/EventsApi.md#eventsByCodeCodeGet) | **GET** /events/by-code/{code} | Get specific event data from the system by event code
-*SmartEventOpenApi.EventsApi* | [**eventsByIdIdGet**](docs/EventsApi.md#eventsByIdIdGet) | **GET** /events/by-id/{id} | Get specific event data from the system by event id
+*SmartEventOpenApi.CategoriesApi* | [**categoriesGetByCode**](docs/CategoriesApi.md#categoriesGetByCode) | **GET** /categories/{code} | Get category details
 *SmartEventOpenApi.EventsApi* | [**eventsGet**](docs/EventsApi.md#eventsGet) | **GET** /events | Get Events from the system
-*SmartEventOpenApi.OrdersApi* | [**calculateOrder**](docs/OrdersApi.md#calculateOrder) | **GET** /order/calculate | Calculate order
-*SmartEventOpenApi.OrdersApi* | [**couponValid**](docs/OrdersApi.md#couponValid) | **GET** /order/coupon/{coupon} | Verify coupon validiation
-*SmartEventOpenApi.OrdersApi* | [**createOrder**](docs/OrdersApi.md#createOrder) | **GET** /order/create | Create order in system
-*SmartEventOpenApi.OrdersApi* | [**orderDetails**](docs/OrdersApi.md#orderDetails) | **GET** /order/{tokenValue} | Get details about created order
+*SmartEventOpenApi.EventsApi* | [**eventsGetByCategoryCode**](docs/EventsApi.md#eventsGetByCategoryCode) | **GET** /category-events/by-code/{code} | Get events data for specied category code
+*SmartEventOpenApi.EventsApi* | [**eventsGetByEventCode**](docs/EventsApi.md#eventsGetByEventCode) | **GET** /events/by-code/{code} | Get specific event data from the system by event code
+*SmartEventOpenApi.EventsApi* | [**eventsGetByEventId**](docs/EventsApi.md#eventsGetByEventId) | **GET** /events/by-id/{id} | Get specific event data from the system by event id
+*SmartEventOpenApi.OrdersApi* | [**orderCreate**](docs/OrdersApi.md#orderCreate) | **GET** /order/create | Create order in system
+*SmartEventOpenApi.OrdersApi* | [**orderGetByToken**](docs/OrdersApi.md#orderGetByToken) | **GET** /order/{tokenValue} | Get details about created order
+*SmartEventOpenApi.OrdersApi* | [**orderGetCalculation**](docs/OrdersApi.md#orderGetCalculation) | **GET** /order/calculate | Calculate order
+*SmartEventOpenApi.PromotionsApi* | [**couponValid**](docs/PromotionsApi.md#couponValid) | **GET** /promotions/coupon/{coupon} | Verify coupon validiation
 
 ## Documentation for Models
 
