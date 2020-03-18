@@ -4,102 +4,13 @@ All URIs are relative to *https://test-se2.smartevent.pl/open-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**calculateOrder**](OrdersApi.md#calculateOrder) | **GET** /order/calculate | Calculate order
-[**couponValid**](OrdersApi.md#couponValid) | **GET** /order/coupon/{coupon} | Verify coupon validiation
-[**createOrder**](OrdersApi.md#createOrder) | **GET** /order/create | Create order in system
-[**orderDetails**](OrdersApi.md#orderDetails) | **GET** /order/{tokenValue} | Get details about created order
+[**orderCreate**](OrdersApi.md#orderCreate) | **GET** /order/create | Create order in system
+[**orderGetByToken**](OrdersApi.md#orderGetByToken) | **GET** /order/{tokenValue} | Get details about created order
+[**orderGetCalculation**](OrdersApi.md#orderGetCalculation) | **GET** /order/calculate | Calculate order
 
-<a name="calculateOrder"></a>
-# **calculateOrder**
-> CalculateResponse calculateOrder(id, qty)
-
-Calculate order
-
-This endpoint will allow you to get order totals.
-
-### Example
-```javascript
-import SmartEventOpenApi from 'smart_event_open_api';
-
-let apiInstance = new SmartEventOpenApi.OrdersApi();
-let id = [3.4]; // [Number] | array of tickets ids
-let qty = [3.4]; // [Number] | array of tickets quantitys
-
-apiInstance.calculateOrder(id, qty, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**[Number]**](Number.md)| array of tickets ids | 
- **qty** | [**[Number]**](Number.md)| array of tickets quantitys | 
-
-### Return type
-
-[**CalculateResponse**](CalculateResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="couponValid"></a>
-# **couponValid**
-> &#x27;String&#x27; couponValid(coupon)
-
-Verify coupon validiation
-
-This endpoint will response with string what is the status of sended coupon
-
-### Example
-```javascript
-import SmartEventOpenApi from 'smart_event_open_api';
-
-let apiInstance = new SmartEventOpenApi.OrdersApi();
-let coupon = "coupon_example"; // String | 
-
-apiInstance.couponValid(coupon, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **coupon** | **String**|  | 
-
-### Return type
-
-**&#x27;String&#x27;**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="createOrder"></a>
-# **createOrder**
-> &#x27;String&#x27; createOrder(customerName, customerSurname, customerPhone, customerEmail, deliveryName, deliverySurname, deliveryPhone, id, qty, opts)
+<a name="orderCreate"></a>
+# **orderCreate**
+> &#x27;String&#x27; orderCreate(customerName, customerSurname, customerPhone, customerEmail, deliveryName, deliverySurname, deliveryPhone, id, qty, opts)
 
 Create order in system
 
@@ -125,6 +36,7 @@ let opts = {
   'participantEmail': ["participantEmail_example"], // [String] | If not passed, copied from customer_email. Number of participant should be equal number of tickets (sum of values in qty field).
   'participantPhone': ["participantPhone_example"], // [String] | If not passed, copied from customer_phone. Number of participant should be equal number of tickets (sum of values in qty field).
   'participantComment': ["participantComment_example"], // [String] | Number of participant should be equal number of tickets (sum of values in qty field).
+  'participantAttributes': ["participantAttributes_example"], // [String] | Number of participant should be equal number of tickets (sum of values in qty field).
   'customerCompany': "customerCompany_example", // String | Customer company name
   'customerStreet': "customerStreet_example", // String | Street address
   'customerCity': "customerCity_example", // String | City name
@@ -150,7 +62,7 @@ let opts = {
   'coupon': "coupon_example", // String | Name of the coupon to be applied
   'ref': "ref_example" // String | Affiliate referer identficator
 };
-apiInstance.createOrder(customerName, customerSurname, customerPhone, customerEmail, deliveryName, deliverySurname, deliveryPhone, id, qty, opts, (error, data, response) => {
+apiInstance.orderCreate(customerName, customerSurname, customerPhone, customerEmail, deliveryName, deliverySurname, deliveryPhone, id, qty, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -177,6 +89,7 @@ Name | Type | Description  | Notes
  **participantEmail** | [**[String]**](String.md)| If not passed, copied from customer_email. Number of participant should be equal number of tickets (sum of values in qty field). | [optional] 
  **participantPhone** | [**[String]**](String.md)| If not passed, copied from customer_phone. Number of participant should be equal number of tickets (sum of values in qty field). | [optional] 
  **participantComment** | [**[String]**](String.md)| Number of participant should be equal number of tickets (sum of values in qty field). | [optional] 
+ **participantAttributes** | [**[String]**](String.md)| Number of participant should be equal number of tickets (sum of values in qty field). | [optional] 
  **customerCompany** | **String**| Customer company name | [optional] 
  **customerStreet** | **String**| Street address | [optional] 
  **customerCity** | **String**| City name | [optional] 
@@ -215,9 +128,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="orderDetails"></a>
-# **orderDetails**
-> Order orderDetails(tokenValue)
+<a name="orderGetByToken"></a>
+# **orderGetByToken**
+> Order orderGetByToken(tokenValue)
 
 Get details about created order
 
@@ -230,7 +143,7 @@ import SmartEventOpenApi from 'smart_event_open_api';
 let apiInstance = new SmartEventOpenApi.OrdersApi();
 let tokenValue = "tokenValue_example"; // String | 
 
-apiInstance.orderDetails(tokenValue, (error, data, response) => {
+apiInstance.orderGetByToken(tokenValue, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -248,6 +161,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Order**](Order.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="orderGetCalculation"></a>
+# **orderGetCalculation**
+> CalculateResponse orderGetCalculation(id, qty)
+
+Calculate order
+
+This endpoint will allow you to get order totals.
+
+### Example
+```javascript
+import SmartEventOpenApi from 'smart_event_open_api';
+
+let apiInstance = new SmartEventOpenApi.OrdersApi();
+let id = [3.4]; // [Number] | array of tickets ids
+let qty = [3.4]; // [Number] | array of tickets quantitys
+
+apiInstance.orderGetCalculation(id, qty, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**[Number]**](Number.md)| array of tickets ids | 
+ **qty** | [**[Number]**](Number.md)| array of tickets quantitys | 
+
+### Return type
+
+[**CalculateResponse**](CalculateResponse.md)
 
 ### Authorization
 

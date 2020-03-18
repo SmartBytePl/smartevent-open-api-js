@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new SmartEventOpenApi.Locale();
+    instance = new SmartEventOpenApi.PromotionsApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,25 +46,17 @@
       object[property] = value;
   }
 
-  describe('Locale', function() {
-    it('should create an instance of Locale', function() {
-      // uncomment below and update the code to test Locale
-      //var instane = new SmartEventOpenApi.Locale();
-      //expect(instance).to.be.a(SmartEventOpenApi.Locale);
+  describe('PromotionsApi', function() {
+    describe('couponValid', function() {
+      it('should call couponValid successfully', function(done) {
+        //uncomment below and update the code to test couponValid
+        //instance.couponValid(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property code (base name: "code")', function() {
-      // uncomment below and update the code to test the property code
-      //var instane = new SmartEventOpenApi.Locale();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new SmartEventOpenApi.Locale();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

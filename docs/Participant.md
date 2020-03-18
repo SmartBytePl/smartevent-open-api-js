@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **email** | **String** |  | [optional] 
 **phone** | **String** |  | [optional] 
 **comment** | **String** |  | [optional] 
+**attributes** | **String** |  | [optional] 
 **street** | **String** |  | [optional] 
 **city** | **String** |  | [optional] 
 **postcode** | **String** |  | [optional] 
