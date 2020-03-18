@@ -1,0 +1,8 @@
+# SmartEventOpenApi.TranslationCategoryParent
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**locale** | **String** |  | [optional] 
+**name** | **String** |  | [optional] 
+**description** | **String** |  | [optional] 
