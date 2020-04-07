@@ -11,5 +11,5 @@ Name | Type | Description | Notes
 **visibleAfterSoldOut** | **Boolean** |  | [optional] 
 **salableAfterSoldOut** | **Boolean** |  | [optional] 
 **taxCategory** | [**TaxCategory**](TaxCategory.md) |  | [optional] 
-**channelPricings** | **{String: [ChannelPricing]}** | Keys reference to code of a channel | [optional] 
-**translations** | **{String: [TranslationTicket]}** | Keys reference to code of a translation | [optional] 
+**channelPricings** | [**{String: ChannelPricing}**](ChannelPricing.md) | Keys reference to code of a channel | [optional] 
+**translations** | [**{String: TranslationTicket}**](TranslationTicket.md) | Keys reference to code of a translation | [optional] 

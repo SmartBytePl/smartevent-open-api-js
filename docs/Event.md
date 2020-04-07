@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **endDate** | **Date** |  | [optional] 
 **visibleFrom** | **Date** |  | [optional] 
 **visibleUntil** | **Date** |  | [optional] 
-**translations** | **{String: [TranslationEvent]}** | Keys reference to locale of a translation | [optional] 
+**translations** | [**{String: TranslationEvent}**](TranslationEvent.md) | Keys reference to locale of a translation | [optional] 
 **tickets** | [**[Ticket]**](Ticket.md) |  | [optional] 
 **images** | [**[Image]**](Image.md) |  | [optional] 
 **categories** | [**[Category]**](Category.md) |  | [optional] 

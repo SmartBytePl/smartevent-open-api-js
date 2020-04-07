@@ -12,16 +12,17 @@
  */
 
 import ApiClient from '../ApiClient';
+import TranslationCategory from './TranslationCategory';
 
 /**
-* The TaxCategory model module.
-* @module model/TaxCategory
+* The CategoryChild model module.
+* @module model/CategoryChild
 * @version 2.0.12
 */
-export default class TaxCategory {
+export default class CategoryChild {
     /**
-    * Constructs a new <code>TaxCategory</code>.
-    * @alias module:model/TaxCategory
+    * Constructs a new <code>CategoryChild</code>.
+    * @alias module:model/CategoryChild
     * @class
     */
 
@@ -32,25 +33,22 @@ export default class TaxCategory {
     }
 
     /**
-    * Constructs a <code>TaxCategory</code> from a plain JavaScript object, optionally creating a new instance.
+    * Constructs a <code>CategoryChild</code> from a plain JavaScript object, optionally creating a new instance.
     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
     * @param {Object} data The plain JavaScript object bearing properties of interest.
-    * @param {module:model/TaxCategory} obj Optional instance to populate.
-    * @return {module:model/TaxCategory} The populated <code>TaxCategory</code> instance.
+    * @param {module:model/CategoryChild} obj Optional instance to populate.
+    * @return {module:model/CategoryChild} The populated <code>CategoryChild</code> instance.
     */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new TaxCategory();
+            obj = obj || new CategoryChild();
                         
             
             if (data.hasOwnProperty('code')) {
                 obj['code'] = ApiClient.convertToType(data['code'], 'String');
             }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('description')) {
-                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            if (data.hasOwnProperty('translations')) {
+                obj['translations'] = ApiClient.convertToType(data['translations'], {'String': TranslationCategory});
             }
         }
         return obj;
@@ -61,13 +59,10 @@ export default class TaxCategory {
     */
     code = undefined;
     /**
-    * @member {String} name
+    * Keys reference to locale of a translation
+    * @member {Object.<String, module:model/TranslationCategory>} translations
     */
-    name = undefined;
-    /**
-    * @member {String} description
-    */
-    description = undefined;
+    translations = undefined;
 
 
 

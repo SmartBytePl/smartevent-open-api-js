@@ -14,15 +14,15 @@
 import ApiClient from "../ApiClient";
 
 /**
-* Promotions service.
-* @module api/PromotionsApi
+* Invoices service.
+* @module api/InvoicesApi
 * @version 2.0.12
 */
-export default class PromotionsApi {
+export default class InvoicesApi {
 
     /**
-    * Constructs a new PromotionsApi. 
-    * @alias module:api/PromotionsApi
+    * Constructs a new InvoicesApi. 
+    * @alias module:api/InvoicesApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -32,24 +32,25 @@ export default class PromotionsApi {
     }
 
     /**
-     * Callback function to receive the result of the couponValid operation.
-     * @callback module:api/PromotionsApi~couponValidCallback
+     * Callback function to receive the result of the invoicesDownload operation.
+     * @callback module:api/InvoicesApi~invoicesDownloadCallback
      * @param {String} error Error message, if any.
      * @param {'String'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Verify coupon validiation
-     * This endpoint will response with string what is the status of sended coupon
-     * @param {module:api/PromotionsApi~couponValidCallback} callback The callback function, accepting three arguments: error, data, response
+     * Download invoice by type for order
+     * This endpoint will return pdf document
+     * @param {module:api/InvoicesApi~invoicesDownloadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'String'}
      */
-    couponValid(coupon, callback) {
+    invoicesDownload(tokenValue, type, callback) {
       let postBody = null;
 
       let pathParams = {
-        'coupon': coupon
+        'tokenValue': tokenValue,
+        'type': type
       };
       let queryParams = {
       };
@@ -60,11 +61,11 @@ export default class PromotionsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/pdf'];
       let returnType = 'String';
 
       return this.apiClient.callApi(
-        '/promotions/coupon/{coupon}', 'GET',
+        '/invoices/download/{type}/order/{tokenValue}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

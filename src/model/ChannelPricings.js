@@ -12,36 +12,40 @@
  */
 
 import ApiClient from '../ApiClient';
+import ChannelPricing from './ChannelPricing';
 
 /**
-* The NotDescribed model module.
-* @module model/NotDescribed
+* The ChannelPricings model module.
+* @module model/ChannelPricings
 * @version 2.0.12
 */
-export default class NotDescribed {
+export default class ChannelPricings {
     /**
-    * Constructs a new <code>NotDescribed</code>.
-    * @alias module:model/NotDescribed
+    * Constructs a new <code>ChannelPricings</code>.
+    * Keys reference to code of a channel
+    * @alias module:model/ChannelPricings
     * @class
+    * @extends Object
     */
 
     constructor() {
         
         
-        
+        return this;
     }
 
     /**
-    * Constructs a <code>NotDescribed</code> from a plain JavaScript object, optionally creating a new instance.
+    * Constructs a <code>ChannelPricings</code> from a plain JavaScript object, optionally creating a new instance.
     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
     * @param {Object} data The plain JavaScript object bearing properties of interest.
-    * @param {module:model/NotDescribed} obj Optional instance to populate.
-    * @return {module:model/NotDescribed} The populated <code>NotDescribed</code> instance.
+    * @param {module:model/ChannelPricings} obj Optional instance to populate.
+    * @return {module:model/ChannelPricings} The populated <code>ChannelPricings</code> instance.
     */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new NotDescribed();
-                        
+            obj = obj || new ChannelPricings();
+            ApiClient.constructFromObject(data, obj, 'ChannelPricing');
+            
             
         }
         return obj;
