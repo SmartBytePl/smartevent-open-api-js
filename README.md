@@ -3,8 +3,8 @@
 SmartEventOpenApi - JavaScript client
 Smart Event Open API documentation
 
-- API version: 2.0.13
-- Package version: 2.0.13
+- API version: 2.0.15
+- Package version: 2.0.15
 
 ## Installation
 
