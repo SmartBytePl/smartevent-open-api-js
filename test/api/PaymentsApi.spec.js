@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new SmartEventOpenApi.Category();
+    instance = new SmartEventOpenApi.PaymentsApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,31 +46,17 @@
       object[property] = value;
   }
 
-  describe('Category', function() {
-    it('should create an instance of Category', function() {
-      // uncomment below and update the code to test Category
-      //var instane = new SmartEventOpenApi.Category();
-      //expect(instance).to.be.a(SmartEventOpenApi.Category);
+  describe('PaymentsApi', function() {
+    describe('payuCreate', function() {
+      it('should call payuCreate successfully', function(done) {
+        //uncomment below and update the code to test payuCreate
+        //instance.payuCreate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property code (base name: "code")', function() {
-      // uncomment below and update the code to test the property code
-      //var instane = new SmartEventOpenApi.Category();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property translations (base name: "translations")', function() {
-      // uncomment below and update the code to test the property translations
-      //var instane = new SmartEventOpenApi.Category();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property parent (base name: "parent")', function() {
-      // uncomment below and update the code to test the property parent
-      //var instane = new SmartEventOpenApi.Category();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

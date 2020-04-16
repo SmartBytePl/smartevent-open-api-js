@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **code** | **String** |  | [optional] 
 **onHold** | **Number** | Number of sold tickets | [optional] 
 **onHand** | **Number** | Number of available tickets | [optional] 
+**alternativeOnHand** | **String** | Alternative number of available tickets it is used to show specific value for the user | [optional] 
 **tracked** | **Boolean** |  | [optional] 
 **visibleAfterSoldOut** | **Boolean** |  | [optional] 
 **salableAfterSoldOut** | **Boolean** |  | [optional] 

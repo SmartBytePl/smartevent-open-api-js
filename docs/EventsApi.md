@@ -4,10 +4,56 @@ All URIs are relative to *http://test-se2.smartevent.pl/open-api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**eventsCalendarGetByEventId**](EventsApi.md#eventsCalendarGetByEventId) | **GET** /open-api/events/{eventId}/calendar/{type} | Get specific event calendar by type_extension
 [**eventsGet**](EventsApi.md#eventsGet) | **GET** /events | Get Events from the system
 [**eventsGetByCategoryCode**](EventsApi.md#eventsGetByCategoryCode) | **GET** /category-events/by-code/{code} | Get events data for specied category code
 [**eventsGetByEventCode**](EventsApi.md#eventsGetByEventCode) | **GET** /events/by-code/{code} | Get specific event data from the system by event code
 [**eventsGetByEventId**](EventsApi.md#eventsGetByEventId) | **GET** /events/by-id/{id} | Get specific event data from the system by event id
+
+<a name="eventsCalendarGetByEventId"></a>
+# **eventsCalendarGetByEventId**
+> eventsCalendarGetByEventId(eventId, type)
+
+Get specific event calendar by type_extension
+
+This endpoint will allow you to get calendar schedule
+
+### Example
+```javascript
+import SmartEventOpenApi from 'smart_event_open_api';
+
+let apiInstance = new SmartEventOpenApi.EventsApi();
+let eventId = 56; // Number | Id of event
+let type = "type_example"; // String | type of calendar
+
+apiInstance.eventsCalendarGetByEventId(eventId, type, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eventId** | **Number**| Id of event | 
+ **type** | **String**| type of calendar | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="eventsGet"></a>
 # **eventsGet**

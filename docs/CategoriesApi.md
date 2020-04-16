@@ -47,7 +47,7 @@ No authorization required
 
 <a name="categoriesGetByCode"></a>
 # **categoriesGetByCode**
-> Category categoriesGetByCode(code)
+> [Category] categoriesGetByCode(code)
 
 Get category details
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Category**](Category.md)
+[**[Category]**](Category.md)
 
 ### Authorization
 

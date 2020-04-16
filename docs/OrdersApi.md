@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="orderCreate"></a>
 # **orderCreate**
-> &#x27;String&#x27; orderCreate(customerName, customerSurname, customerPhone, customerEmail, deliveryName, deliverySurname, deliveryPhone, id, qty, opts)
+> &#x27;String&#x27; orderCreate(customerName, customerSurname, customerPhone, customerEmail, deliveryName, deliverySurname, deliveryPhone, channelCode, id, qty, opts)
 
 Create order in system
 
@@ -28,6 +28,7 @@ let customerEmail = "customerEmail_example"; // String | Customer email
 let deliveryName = "deliveryName_example"; // String | Name
 let deliverySurname = "deliverySurname_example"; // String | Surname
 let deliveryPhone = "deliveryPhone_example"; // String | Phone number
+let channelCode = "channelCode_example"; // String | Code of the channel which should be used. If not passed it is resolved on domain base.
 let id = [3.4]; // [Number] | Array of tickets ids
 let qty = [3.4]; // [Number] | Array of tickets quantitys
 let opts = { 
@@ -36,7 +37,7 @@ let opts = {
   'participantEmail': ["participantEmail_example"], // [String] | If not passed, copied from customer_email. Number of participant should be equal number of tickets (sum of values in qty field).
   'participantPhone': ["participantPhone_example"], // [String] | If not passed, copied from customer_phone. Number of participant should be equal number of tickets (sum of values in qty field).
   'participantComment': ["participantComment_example"], // [String] | Number of participant should be equal number of tickets (sum of values in qty field).
-  'participantAttributes': ["participantAttributes_example"], // [String] | Number of participant should be equal number of tickets (sum of values in qty field).
+  'participantClothesSize': ["participantClothesSize_example"], // [String] | Number of participant should be equal number of tickets (sum of values in qty field).
   'customerCompany': "customerCompany_example", // String | Customer company name
   'customerStreet': "customerStreet_example", // String | Street address
   'customerCity': "customerCity_example", // String | City name
@@ -55,14 +56,14 @@ let opts = {
   'deliveryPostcode': "deliveryPostcode_example", // String | Post code
   'deliveryCountryCode': "deliveryCountryCode_example", // String | Country code
   'deliveryVatid': "deliveryVatid_example", // String | Vat ID only digits and signs
-  'additionalInfo': "additionalInfo_example", // String | customer comments for order
-  'channelCode': "channelCode_example", // String | Code of the channel which should be used. If not passed it is resolved on domain base.
+  'notes': "notes_example", // String | customer comments for order
   'currencyCode': "currencyCode_example", // String | Currency of the order. If not passed default channel currency will be used.
   'localeCode': "localeCode_example", // String | Locale of the order. If not passed default channel locale wii be used.
   'coupon': "coupon_example", // String | Name of the coupon to be applied
-  'ref': "ref_example" // String | Affiliate referer identficator
+  'ref': "ref_example", // String | Affiliate referer identficator
+  'ga': "ga_example" // String | Google Analytics conversion code
 };
-apiInstance.orderCreate(customerName, customerSurname, customerPhone, customerEmail, deliveryName, deliverySurname, deliveryPhone, id, qty, opts, (error, data, response) => {
+apiInstance.orderCreate(customerName, customerSurname, customerPhone, customerEmail, deliveryName, deliverySurname, deliveryPhone, channelCode, id, qty, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -82,6 +83,7 @@ Name | Type | Description  | Notes
  **deliveryName** | **String**| Name | 
  **deliverySurname** | **String**| Surname | 
  **deliveryPhone** | **String**| Phone number | 
+ **channelCode** | **String**| Code of the channel which should be used. If not passed it is resolved on domain base. | 
  **id** | [**[Number]**](Number.md)| Array of tickets ids | 
  **qty** | [**[Number]**](Number.md)| Array of tickets quantitys | 
  **participantName** | [**[String]**](String.md)| If not passed, copied from customer_name. Number of participant should be equal number of tickets (sum of values in qty field). | [optional] 
@@ -89,7 +91,7 @@ Name | Type | Description  | Notes
  **participantEmail** | [**[String]**](String.md)| If not passed, copied from customer_email. Number of participant should be equal number of tickets (sum of values in qty field). | [optional] 
  **participantPhone** | [**[String]**](String.md)| If not passed, copied from customer_phone. Number of participant should be equal number of tickets (sum of values in qty field). | [optional] 
  **participantComment** | [**[String]**](String.md)| Number of participant should be equal number of tickets (sum of values in qty field). | [optional] 
- **participantAttributes** | [**[String]**](String.md)| Number of participant should be equal number of tickets (sum of values in qty field). | [optional] 
+ **participantClothesSize** | [**[String]**](String.md)| Number of participant should be equal number of tickets (sum of values in qty field). | [optional] 
  **customerCompany** | **String**| Customer company name | [optional] 
  **customerStreet** | **String**| Street address | [optional] 
  **customerCity** | **String**| City name | [optional] 
@@ -108,12 +110,12 @@ Name | Type | Description  | Notes
  **deliveryPostcode** | **String**| Post code | [optional] 
  **deliveryCountryCode** | **String**| Country code | [optional] 
  **deliveryVatid** | **String**| Vat ID only digits and signs | [optional] 
- **additionalInfo** | **String**| customer comments for order | [optional] 
- **channelCode** | **String**| Code of the channel which should be used. If not passed it is resolved on domain base. | [optional] 
+ **notes** | **String**| customer comments for order | [optional] 
  **currencyCode** | **String**| Currency of the order. If not passed default channel currency will be used. | [optional] 
  **localeCode** | **String**| Locale of the order. If not passed default channel locale wii be used. | [optional] 
  **coupon** | **String**| Name of the coupon to be applied | [optional] 
  **ref** | **String**| Affiliate referer identficator | [optional] 
+ **ga** | **String**| Google Analytics conversion code | [optional] 
 
 ### Return type
 

@@ -14,15 +14,15 @@
 import ApiClient from "../ApiClient";
 
 /**
-* Promotions service.
-* @module api/PromotionsApi
+* Payments service.
+* @module api/PaymentsApi
 * @version 2.0.15
 */
-export default class PromotionsApi {
+export default class PaymentsApi {
 
     /**
-    * Constructs a new PromotionsApi. 
-    * @alias module:api/PromotionsApi
+    * Constructs a new PaymentsApi. 
+    * @alias module:api/PaymentsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -32,24 +32,23 @@ export default class PromotionsApi {
     }
 
     /**
-     * Callback function to receive the result of the couponValid operation.
-     * @callback module:api/PromotionsApi~couponValidCallback
+     * Callback function to receive the result of the payuCreate operation.
+     * @callback module:api/PaymentsApi~payuCreateCallback
      * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Verify coupon validiation
-     * This endpoint will response with string what is the status of sended coupon
-     * @param {module:api/PromotionsApi~couponValidCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * Create payment for order
+     * This endpoint will redirect to start payment
+     * @param {module:api/PaymentsApi~payuCreateCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    couponValid(coupon, callback) {
+    payuCreate(tokenValue, callback) {
       let postBody = null;
 
       let pathParams = {
-        'coupon': coupon
+        'tokenValue': tokenValue
       };
       let queryParams = {
       };
@@ -60,11 +59,11 @@ export default class PromotionsApi {
 
       let authNames = [];
       let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = 'String';
+      let accepts = [];
+      let returnType = null;
 
       return this.apiClient.callApi(
-        '/promotions/coupon/{coupon}', 'GET',
+        '/payments/payu/create/{tokenValue}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
