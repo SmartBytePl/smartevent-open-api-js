@@ -42,14 +42,17 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *SmartEventOpenApi.CategoriesApi* | [**categoriesGet**](docs/CategoriesApi.md#categoriesGet) | **GET** /categories | Get list of all categories
 *SmartEventOpenApi.CategoriesApi* | [**categoriesGetByCode**](docs/CategoriesApi.md#categoriesGetByCode) | **GET** /categories/{code} | Get category details
+*SmartEventOpenApi.EventsApi* | [**eventsCalendarGetByEventId**](docs/EventsApi.md#eventsCalendarGetByEventId) | **GET** /open-api/events/{eventId}/calendar/{type} | Get specific event calendar by type_extension
 *SmartEventOpenApi.EventsApi* | [**eventsGet**](docs/EventsApi.md#eventsGet) | **GET** /events | Get Events from the system
 *SmartEventOpenApi.EventsApi* | [**eventsGetByCategoryCode**](docs/EventsApi.md#eventsGetByCategoryCode) | **GET** /category-events/by-code/{code} | Get events data for specied category code
 *SmartEventOpenApi.EventsApi* | [**eventsGetByEventCode**](docs/EventsApi.md#eventsGetByEventCode) | **GET** /events/by-code/{code} | Get specific event data from the system by event code
 *SmartEventOpenApi.EventsApi* | [**eventsGetByEventId**](docs/EventsApi.md#eventsGetByEventId) | **GET** /events/by-id/{id} | Get specific event data from the system by event id
-*SmartEventOpenApi.InvoicesApi* | [**invoicesDownload**](docs/InvoicesApi.md#invoicesDownload) | **GET** /invoices/download/{type}/order/{tokenValue} | Download invoice by type for order
+*SmartEventOpenApi.InvoicesApi* | [**invoicesCreate**](docs/InvoicesApi.md#invoicesCreate) | **GET** /invoices/{type}/create/{tokenValue} | Create invoice by type
+*SmartEventOpenApi.InvoicesApi* | [**invoicesDownload**](docs/InvoicesApi.md#invoicesDownload) | **GET** /invoices/{type}/download/{tokenValue} | Download invoice by type for order
 *SmartEventOpenApi.OrdersApi* | [**orderCreate**](docs/OrdersApi.md#orderCreate) | **GET** /order/create | Create order in system
 *SmartEventOpenApi.OrdersApi* | [**orderGetByToken**](docs/OrdersApi.md#orderGetByToken) | **GET** /order/{tokenValue} | Get details about created order
 *SmartEventOpenApi.OrdersApi* | [**orderGetCalculation**](docs/OrdersApi.md#orderGetCalculation) | **GET** /order/calculate | Calculate order
+*SmartEventOpenApi.PaymentsApi* | [**payuCreate**](docs/PaymentsApi.md#payuCreate) | **GET** /payments/payu/create/{tokenValue} | Create payment for order
 *SmartEventOpenApi.PromotionsApi* | [**couponValid**](docs/PromotionsApi.md#couponValid) | **GET** /promotions/coupon/{coupon} | Verify coupon validiation
 
 ## Documentation for Models
